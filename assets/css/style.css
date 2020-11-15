@@ -1,0 +1,200 @@
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height:100vh;
+	margin:0;
+}
+
+.avater{
+	width               : 100px;
+	height              : 100px;
+	border-radius       : 50%;
+	background-image    : url("../img/black.jpg");
+	background-size     : cover;
+	background-position : center;
+	position: relative;
+}
+
+.avater::before,
+.avater::after{
+
+	--scale:0;
+	--tooltip-color:green;
+	--arrow-size:20px;
+	position: absolute;	
+	top: -.25rem;
+	left: 50%;
+	transform: translateX(-50%) translateY(var(--translate-y,0)) scale(var(--scale));
+	transition: 150ms transform;
+	transform-origin: bottom center;
+
+}
+
+.avater::before{
+	--translate-y:calc(-98% - var(--arrow-size));
+
+
+	content: attr(data-tooltip);
+	padding:.5rem;
+	background: var(--tooltip-color);
+	color: #fff;
+	width: max-content;
+	max-width: 100%;
+	border-radius: .3rem;
+	text-align: center;
+
+}
+
+.avater:hover::before,
+.avater:hover::after{
+ --scale:1;
+}
+
+.avater::after{
+	--translate-y    : calc(-1 * var(--arrow-size));
+
+	content          : '';
+	border           : var(--arrow-size) solid transparent;
+	border-top-color : var(--tooltip-color);
+	transform-origin : top center;
+
+}
+
+
+
+
+
+
+
+.tiooltip{
+	position          : relative;
+}
+
+
+
+.tool-tip-text{
+	background-image   : url("../img/black.jpg");
+	width              : 55px;
+	height             : 55px;
+	background-size    : cover;
+	background-position: center;
+	transition         : all 1s linear;
+	border             : 2px solid #000000d6;
+	position           : absolute;
+	top                : -12%;
+	border-radius      : 3px;
+	left               : 38%;
+	visibility         : hidden;
+	opacity            : 0;
+}
+/*./tool-tip-text-Black */
+.tool-tip-text-black{
+	background-image   : url("../img/black.jpg");
+	border             : 2px solid black;
+}
+
+
+/*./tool-tip-text-blue*/
+.tool-tip-text-blue{
+	background-image   : url("../img/blue.png");
+	border             : 2px solid #0056b3;
+}
+
+
+/*./tool-tip-text-green*/
+.tool-tip-text-green{
+	background-image   : url("../img/green.png");
+	border             : 2px solid green;
+}
+
+/*./tool-tip-text-red*/
+.tool-tip-text-red{
+	background-image   : url("../img/red.jpeg");
+	border             : 2px solid #e50b20;
+}
+
+
+.tool-tip-text:before{
+    position     : absolute;
+    top          : 34px;
+    left         : 0px;
+    width        : 51px;
+    height       : 17px;
+    color        : #fff;
+    font-size    : 11px;
+    text-align   : center;
+}
+
+.tool-tip-text-black:before{
+	content      : 'Black';
+	background-color:  black; 
+}
+
+.tool-tip-text-blue:before{
+	content      : 'Blue';
+	background-color: #0056b3;
+}
+
+.tool-tip-text-green:before{
+	content      : 'Green';
+	background-color: green;
+}
+
+.tool-tip-text-red:before{
+	content      : 'Red';
+	background-color: #e50b20;
+}
+
+
+
+
+.tool-tip-text:after,  .tool-tip-text-blue:after{
+	position           : absolute;
+	content            : '';
+	top                : 100%;
+	left               : 28%;
+	right              : 30px solid red;
+	border-top         : 10px solid #000000d6;
+	border-left        : 10px solid transparent;
+	border-right       : 10px solid transparent;
+	visibility         : hidden;
+	opacity            : 0;
+}
+
+
+/*.tool-tip-text-black*/
+.tool-tip-text-black:after{
+	border-top         : 10px solid black;
+}
+
+
+/*.tool-tip-text-blue*/
+.tool-tip-text-blue:after{
+	border-top         : 10px solid #0056b3;
+}
+
+
+/*.tool-tip-text-gren*/
+.tool-tip-text-green:after{
+	border-top         : 10px solid green;
+}
+
+/*.tool-tip-text-red*/
+.tool-tip-text-red:after{
+	border-top         : 10px solid #e50b20;
+}
+
+
+.tiooltip img{
+	width              : 200px;
+	height             : 200px;
+	margin-top         : 40px;
+}
+
+.tiooltip:hover .tool-tip-text, 
+.tool-tip-text:after, 
+.tool-tip-text:before {
+	visibility         : visible;
+	opacity            : 1;
+} 
