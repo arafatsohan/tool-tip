@@ -74,13 +74,13 @@ body{
 
 
 .tool-tip-text{
-	
+	background-image   : var(--tooltip-background);
+	border             : 2px solid var(--border-color);
 	width              : 55px;
 	height             : 55px;
 	background-size    : cover;
 	background-position: center;
 	transition         : all 1s linear;
-	border             : 2px solid #000000d6;
 	position           : absolute;
 	top                : -12%;
 	border-radius      : 3px;
@@ -88,33 +88,8 @@ body{
 	visibility         : hidden;
 	opacity            : 0;
 }
-/*./tool-tip-text-Black */
-.tool-tip-text-black{
-    background-image   : attr(data-image url);
-	border             : 2px solid black;
-}
 
 
-/*./tool-tip-text-blue*/
-.tool-tip-text-blue{
-	background-image   : url("../img/blue.png");
-	border             : 2px solid #0056b3;
-}
-
-
-/*./tool-tip-text-green*/
-.tool-tip-text-green{
-	background-image   : url("../img/green.png");
-	border             : 2px solid green;
-}
-
-/*./tool-tip-text-red*/
-.tool-tip-text-red{
-	background-image   : url("../img/red.jpeg");
-	border             : 2px solid #e50b20;
-}
-
-/*./tool-tip-text-red-test*/
 .tool-tip-text:before{
     position     : absolute;
     top          : 34px;
@@ -126,63 +101,22 @@ body{
     text-align   : center;
 }
 
-.tool-tip-text-black:before{
-	content: attr(data-title);
-	background-color:  black; 
-}
-
-.tool-tip-text-blue:before{
-	content: attr(data-title);
-	background-color: #0056b3;
-}
-
-.tool-tip-text-green:before{
-    content: attr(data-title);
-	background-color: green;
-}
-
-.tool-tip-text-red:before{
-	content: attr(data-title);
-	background-color: #e50b20;
-}
+.tool-tip-text:before{
+	content            : attr(data-title);
+	background-color   : var(--bg-color); 
+	}
 
 
-
-
-.tool-tip-text:after,  .tool-tip-text-blue:after{
+.tool-tip-text:after{
 	position           : absolute;
 	content            : '';
 	top                : 100%;
 	left               : 28%;
-	right              : 30px solid red;
-	border-top         : 10px solid #000000d6;
+	border-top         : 10px solid var(--tooltip-color);
 	border-left        : 10px solid transparent;
 	border-right       : 10px solid transparent;
 	visibility         : hidden;
 	opacity            : 0;
-}
-
-
-/*.tool-tip-text-black*/
-.tool-tip-text-black:after{
-	border-top         : 10px solid black;
-}
-
-
-/*.tool-tip-text-blue*/
-.tool-tip-text-blue:after{
-	border-top         : 10px solid #0056b3;
-}
-
-
-/*.tool-tip-text-gren*/
-.tool-tip-text-green:after{
-	border-top         : 10px solid green;
-}
-
-/*.tool-tip-text-red*/
-.tool-tip-text-red:after{
-	border-top         : 10px solid #e50b20;
 }
 
 
