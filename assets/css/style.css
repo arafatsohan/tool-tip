@@ -74,7 +74,7 @@ body{
 
 
 .tool-tip-text{
-	background-image   : url("../img/black.jpg");
+	
 	width              : 55px;
 	height             : 55px;
 	background-size    : cover;
@@ -90,7 +90,7 @@ body{
 }
 /*./tool-tip-text-Black */
 .tool-tip-text-black{
-	background-image   : url("../img/black.jpg");
+    background-image   : attr(data-image url);
 	border             : 2px solid black;
 }
 
@@ -114,7 +114,7 @@ body{
 	border             : 2px solid #e50b20;
 }
 
-
+/*./tool-tip-text-red-test*/
 .tool-tip-text:before{
     position     : absolute;
     top          : 34px;
@@ -127,22 +127,22 @@ body{
 }
 
 .tool-tip-text-black:before{
-	content      : 'Black';
+	content: attr(data-title);
 	background-color:  black; 
 }
 
 .tool-tip-text-blue:before{
-	content      : 'Blue';
+	content: attr(data-title);
 	background-color: #0056b3;
 }
 
 .tool-tip-text-green:before{
-	content      : 'Green';
+    content: attr(data-title);
 	background-color: green;
 }
 
 .tool-tip-text-red:before{
-	content      : 'Red';
+	content: attr(data-title);
 	background-color: #e50b20;
 }
 
